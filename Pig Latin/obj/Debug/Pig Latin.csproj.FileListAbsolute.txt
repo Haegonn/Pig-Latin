@@ -1,0 +1,6 @@
+C:\Users\Josh\Documents\GitHub\Pig Latin\Pig Latin\bin\Debug\Pig Latin.exe.config
+C:\Users\Josh\Documents\GitHub\Pig Latin\Pig Latin\bin\Debug\Pig Latin.exe
+C:\Users\Josh\Documents\GitHub\Pig Latin\Pig Latin\bin\Debug\Pig Latin.pdb
+C:\Users\Josh\Documents\GitHub\Pig Latin\Pig Latin\obj\Debug\Pig Latin.csprojResolveAssemblyReference.cache
+C:\Users\Josh\Documents\GitHub\Pig Latin\Pig Latin\obj\Debug\Pig Latin.exe
+C:\Users\Josh\Documents\GitHub\Pig Latin\Pig Latin\obj\Debug\Pig Latin.pdb
