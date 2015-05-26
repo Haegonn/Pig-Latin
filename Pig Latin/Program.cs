@@ -10,44 +10,55 @@ namespace Pig_Latin
     {
         static void Main(string[] args)
         {
-            // Welcome message
             Console.WriteLine("Welcome to the Pig Latin Translator!\n");
 
-            // TODO Ask the user to input the word they would like translated.
+            Console.Write("Please enter the English word you would like translated: ");
+            string userInputString = Console.ReadLine();
+            Console.WriteLine("\n");
 
-            string testString = "pig";
-
-            // Do the translation calculations.
             char[] vowelArray = new char[5] { 'a', 'e', 'i', 'o', 'u' };
 
-            foreach (char c in testString)
-            {
-                for (int i = 0; i <= 4; i++)
+            int stringCut = 0;
+            int loopCount = 0;
+            bool specialCase = false;
+            bool vowelFound = false;
+            string preString = "";
+            string postString = "";
+
+            foreach (char c in userInputString) {
+                for (int i = 0; i <= 4; i++) 
                 {
                     char tmp = vowelArray[i];
-                    if (c == tmp && i == 0)
+                    if (c == tmp && loopCount == 0) 
                     {
-                        // TODO Handle the "egg" situation (first character is vowel)
-                        Console.Write("Code 1");
-                    } 
-                    else if (c == tmp && i != 0)
+                        specialCase = true;
+                    }
+                    else if (c == tmp && loopCount != 0)
                     {
-                        string tmpString = "";
-                        for (int x = 0; x <= i; x++)
-                        {
-                            tmpString = tmpString + vowelArray[x];
-                        }
-
-                        Console.WriteLine(tmpString);
+                        stringCut = loopCount;
+                        vowelFound = true;
                     }
                 }
+                if (vowelFound == true) break;
+                loopCount++;
             }
 
-            Console.ReadLine();
+            if (specialCase == true)
+            {
+                preString = userInputString;
+                postString = "way";
+                Console.WriteLine("Your translated word is: {0}{1}", preString, postString);
+            }
+            else
+            {
+                int strLength = userInputString.Length - stringCut;
+                preString = userInputString.Substring(stringCut, strLength);
+                postString = userInputString.Substring(0, stringCut);
+                Console.WriteLine("Your translated word is: {0}{1}ay\n\n", preString, postString);
+            }
 
-            // Do the console printing.
-            Console.WriteLine("String before translation: {0}", testString);
-            //Console.WriteLine("String after translation:  {0}", resultString);
+            Console.Write("Thank you for using Josh's Pig Latin traslator! Please press Enter to exit.");
+            Console.ReadLine();
         }
     }
 }
